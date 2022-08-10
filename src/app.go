@@ -1,5 +1,8 @@
 package src
 
-func App() {
-	
+import "github.com/gin-gonic/gin"
+
+func App() *gin.Engine {
+	r := gin.Default()
+	return r
 }
