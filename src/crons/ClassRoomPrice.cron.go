@@ -19,7 +19,7 @@ type ClassRoomPriceCronAdapter struct {
 	At    string
 }
 
-func New(every int, at string) *ClassRoomPriceCronAdapter {
+func NewClassRoomPriceCronAdapter(every int, at string) *ClassRoomPriceCronAdapter {
 	return &ClassRoomPriceCronAdapter{
 		Every: every,
 		At:    at,
