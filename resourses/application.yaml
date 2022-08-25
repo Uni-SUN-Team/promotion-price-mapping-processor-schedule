@@ -20,4 +20,7 @@ endpoint:
   class_room:
     path: /api/class-rooms
     query: ?fields[0]=id&fields[1]=prices
+  promotion:
+    path: /api/promotions
+    query: ?populate=*
 GIN_MODE: "debug"

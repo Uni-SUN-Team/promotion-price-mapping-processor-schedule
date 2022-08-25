@@ -1,4 +1,4 @@
-package components
+package client
 
 import (
 	"encoding/json"
@@ -14,7 +14,7 @@ type ClassRoomHttpRequestAdapter struct {
 	HttpRequest util.HttpRequestPort
 }
 
-func New(httpRequestPort util.HttpRequestPort) *ClassRoomHttpRequestAdapter {
+func NewClassRoomHttpRequestAdapter(httpRequestPort util.HttpRequestPort) *ClassRoomHttpRequestAdapter {
 	return &ClassRoomHttpRequestAdapter{
 		HttpRequest: httpRequestPort,
 	}

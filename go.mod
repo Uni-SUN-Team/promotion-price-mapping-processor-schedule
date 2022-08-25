@@ -5,6 +5,7 @@ go 1.18
 require github.com/go-co-op/gocron v1.15.0
 
 require (
+	github.com/dariubs/percent v1.0.0 // indirect
 	github.com/fsnotify/fsnotify v1.5.4 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect

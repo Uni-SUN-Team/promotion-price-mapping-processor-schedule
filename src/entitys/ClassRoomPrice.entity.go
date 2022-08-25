@@ -5,4 +5,6 @@ type ClassRoomPriceEntity struct {
 	ClassRoomId  int
 	RegularPrice float64
 	SpecialPrice float64
+	Advisors     string
+	Categories   string
 }

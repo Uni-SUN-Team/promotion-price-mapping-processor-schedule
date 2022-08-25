@@ -1,10 +1,17 @@
 package crons
 
 import (
-	"fmt"
+	"strings"
 	"time"
+	"unisun/api/class-room-price-mapping-processor-schedule/src/components"
+	"unisun/api/class-room-price-mapping-processor-schedule/src/components/client"
+	"unisun/api/class-room-price-mapping-processor-schedule/src/constants"
+	"unisun/api/class-room-price-mapping-processor-schedule/src/repositories"
+	"unisun/api/class-room-price-mapping-processor-schedule/src/services"
+	"unisun/api/class-room-price-mapping-processor-schedule/src/utils"
 
 	"github.com/go-co-op/gocron"
+	"github.com/spf13/viper"
 )
 
 type ClassRoomPriceCronAdapter struct {
@@ -22,7 +29,14 @@ func New(every int, at string) *ClassRoomPriceCronAdapter {
 func (srv *ClassRoomPriceCronAdapter) ProcessSchedule() {
 	s := gocron.NewScheduler(time.UTC)
 	s.Every(srv.Every).Day().At(srv.At).Do(func() {
-		fmt.Println("SST")
+		httpRequestPort := utils.New()
+		classRoomHttpRequestAdapter := client.NewClassRoomHttpRequestAdapter(httpRequestPort)
+		path := strings.Join([]string{viper.GetString("endpoint.class_room.path"), viper.GetString("endpoint.class_room.query")}, "")
+		method := constants.GET
+		mappingValueRequestPayloadAdapte := components.NewMappingValueRequestPayloadAdapte(path, method, nil)
+		classRoomPriceRepositoriesAdapter := repositories.NewClassRoomPriceRepositoriesAdapter()
+		classRoomPriceAdapter := services.NewClassRoomPriceAdapter(classRoomHttpRequestAdapter, mappingValueRequestPayloadAdapte, classRoomPriceRepositoriesAdapter)
+		classRoomPriceAdapter.ManagePrice()
 	})
 	s.StartAsync()
 	s.StartBlocking()

@@ -11,8 +11,14 @@ type ClassRoom struct {
 }
 
 type ClassRoomBody struct {
-	Id    int     `json:"id"`
-	Price float64 `json:"price"`
+	Id       int     `json:"id"`
+	Price    float64 `json:"price"`
+	Advisors []struct {
+		Id int `json:"id"`
+	} `json:"advisors"`
+	Categories []struct {
+		Id int `json:"id"`
+	} `json:"categories"`
 }
 
 type pagination struct {
