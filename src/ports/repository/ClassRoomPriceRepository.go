@@ -5,10 +5,10 @@ import (
 )
 
 type ClassRoomPricePort interface {
-	GetById(id int) *entitys.ClassRoomPriceEntity
-	GetByClassRoomId(id int) *entitys.ClassRoomPriceEntity
-	Save(classRoom entitys.ClassRoomPriceEntity)
-	Update(classRoom entitys.ClassRoomPriceEntity)
-	GetByAdvisor(id string) *[]entitys.ClassRoomPriceEntity
-	GetByCategories(id string) *[]entitys.ClassRoomPriceEntity
+	GetById(id int) *entitys.ClassRoomPrice
+	GetByClassRoomId(id int) *entitys.ClassRoomPrice
+	Save(classRoom entitys.ClassRoomPrice)
+	Update(classRoom entitys.ClassRoomPrice)
+	GetByAdvisor(id string) *[]entitys.ClassRoomPrice
+	GetByCategories(id string) *[]entitys.ClassRoomPrice
 }

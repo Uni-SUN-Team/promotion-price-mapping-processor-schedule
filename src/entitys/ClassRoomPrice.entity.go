@@ -1,6 +1,6 @@
 package entitys
 
-type ClassRoomPriceEntity struct {
+type ClassRoomPrice struct {
 	Id           int
 	ClassRoomId  int
 	RegularPrice float64

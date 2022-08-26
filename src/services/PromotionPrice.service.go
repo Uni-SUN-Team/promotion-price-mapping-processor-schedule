@@ -42,8 +42,9 @@ func (srv *PromotionPriceAdapter) ManagePromotion() {
 		case "classroom.subject-list":
 			classrooms := srv.ClassRoomPriceGorm.GetByClassRoomId(promotion.Group[0].Classrooms[0].Id)
 			if classrooms.ClassRoomId != 0 {
-				classrooms.SpecialPrice = calculatePrice(classrooms.RegularPrice, promotion.Discount[0].Discount, promotion.Discount[0].Component)
-				srv.ClassRoomPriceGorm.Update(*classrooms)
+				payload := *classrooms
+				payload.SpecialPrice = calculatePrice(classrooms.RegularPrice, promotion.Discount[0].Discount, promotion.Discount[0].Component)
+				srv.ClassRoomPriceGorm.Update(payload)
 			}
 		case "classroom.advisors-list":
 			classrooms := srv.ClassRoomPriceGorm.GetByAdvisor(strconv.Itoa(promotion.Group[0].Advisors[0].Id))

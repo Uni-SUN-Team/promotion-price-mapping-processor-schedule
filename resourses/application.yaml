@@ -17,9 +17,6 @@ endpoint:
   strapi-information-gateway:
     host: "http://localhost:8080"
     path: "/strapi-information-gateway/api/v1/strapi"
-  class_room:
-    path: /api/class-rooms
-    query: ?fields[0]=id&fields[1]=prices
   promotion:
     path: /api/promotions
     query: ?populate[Group][populate]=*&populate[Discount][populate]=*

@@ -30,7 +30,7 @@ func ConnectDatabase() {
 		log.Fatalln("Failed to connect to database!")
 	}
 
-	var ClassRoomPriceEntity entitys.ClassRoomPriceEntity
+	var ClassRoomPriceEntity entitys.ClassRoomPrice
 	database.AutoMigrate(&ClassRoomPriceEntity)
 	DB = database
 }

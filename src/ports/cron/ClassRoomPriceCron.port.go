@@ -1,5 +1,5 @@
 package cron
 
-type ClassRoomPricePort interface {
+type PromotionPriceCron interface {
 	ProcessSchedule()
 }

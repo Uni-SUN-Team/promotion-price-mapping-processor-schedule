@@ -30,7 +30,7 @@ func NewPromotionPriceCronAdapter(every int, at string) *PromotionPriceCronAdapt
 func (srv *PromotionPriceCronAdapter) ProcessSchedule() {
 	log.Println("Start cron promotionprice")
 	s := gocron.NewScheduler(time.UTC)
-	s.Every(srv.Every).Day().At(srv.At).Do(func() {
+	s.Every("5m").Do(func() {
 		httpRequestPort := utils.New()
 		classRoomHttpRequestAdapter := client.NewClassRoomHttpRequestAdapter(httpRequestPort)
 		path := strings.Join([]string{viper.GetString("endpoint.promotion.path"), viper.GetString("endpoint.promotion.query")}, "")
