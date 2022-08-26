@@ -7,6 +7,7 @@ import (
 	"strings"
 	"unisun/api/class-room-price-mapping-processor-schedule/src/entitys"
 	classroom "unisun/api/class-room-price-mapping-processor-schedule/src/models/class-room"
+	classroomprice "unisun/api/class-room-price-mapping-processor-schedule/src/models/class-room-price"
 	"unisun/api/class-room-price-mapping-processor-schedule/src/ports/component"
 	"unisun/api/class-room-price-mapping-processor-schedule/src/ports/repository"
 )
@@ -17,6 +18,10 @@ type ClassRoomPriceAdapter struct {
 	ClassRoomPriceGorm         repository.ClassRoomPricePort
 }
 
+type ClassRoomPriceGetFromRepoAdapter struct {
+	ClassRoomPriceGorm repository.ClassRoomPricePort
+}
+
 func NewClassRoomPriceAdapter(classRoomHttpRequest component.ClassRoomHttpRequestPort,
 	mappingValueRequestPayload component.MappingValueRequestPayloadPort,
 	ClassRoomPrice repository.ClassRoomPricePort) *ClassRoomPriceAdapter {
@@ -24,6 +29,12 @@ func NewClassRoomPriceAdapter(classRoomHttpRequest component.ClassRoomHttpReques
 		ClassRoomHttpRequest:       classRoomHttpRequest,
 		MappingValueRequestPayload: mappingValueRequestPayload,
 		ClassRoomPriceGorm:         ClassRoomPrice,
+	}
+}
+
+func NewClassRoomPriceGetFromRepoAdapter(classRoomPriceRepo repository.ClassRoomPricePort) *ClassRoomPriceGetFromRepoAdapter {
+	return &ClassRoomPriceGetFromRepoAdapter{
+		ClassRoomPriceGorm: classRoomPriceRepo,
 	}
 }
 
@@ -90,5 +101,17 @@ func (srv *ClassRoomPriceAdapter) ManagePrice() {
 			}
 			srv.ClassRoomPriceGorm.Save(body)
 		}
+	}
+}
+
+func (srv *ClassRoomPriceGetFromRepoAdapter) GetClassRoomPrice(id int) *classroomprice.ClassRoomPriceEntity {
+	result := srv.ClassRoomPriceGorm.GetById(id)
+	return &classroomprice.ClassRoomPriceEntity{
+		Id:           result.Id,
+		ClassRoomId:  result.ClassRoomId,
+		RegularPrice: result.RegularPrice,
+		SpecialPrice: result.SpecialPrice,
+		Advisors:     result.Advisors,
+		Categories:   result.Categories,
 	}
 }
