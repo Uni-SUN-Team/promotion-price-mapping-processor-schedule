@@ -1,6 +1,6 @@
 app:
   env: "development"
-  port: 8080
+  port: 8083
   context_path: "/class-room-price-mapping-processor-schedule"
   host: "localhost"
   root_path: "/api"
@@ -26,4 +26,4 @@ endpoint:
 GIN_MODE: "debug"
 cron:
   every: 1
-  at: 02:00
+  at: 13:30

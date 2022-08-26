@@ -1,6 +1,7 @@
 package crons
 
 import (
+	"log"
 	"strings"
 	"time"
 	"unisun/api/class-room-price-mapping-processor-schedule/src/components"
@@ -27,6 +28,7 @@ func NewClassRoomPriceCronAdapter(every int, at string) *ClassRoomPriceCronAdapt
 }
 
 func (srv *ClassRoomPriceCronAdapter) ProcessSchedule() {
+	log.Println("Start cron classroomprice")
 	s := gocron.NewScheduler(time.UTC)
 	s.Every(srv.Every).Day().At(srv.At).Do(func() {
 		httpRequestPort := utils.New()
