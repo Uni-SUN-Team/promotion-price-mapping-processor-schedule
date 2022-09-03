@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"log"
 	"strconv"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/models/promotion"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/ports/component"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/ports/repository"
+	"unisun/api/promotion-price-mapping-processor-schedule/src/models/promotion"
+	"unisun/api/promotion-price-mapping-processor-schedule/src/ports/component"
+	"unisun/api/promotion-price-mapping-processor-schedule/src/ports/repository"
 
 	"github.com/dariubs/percent"
 )

@@ -1,8 +1,6 @@
 package repository
 
-import (
-	"unisun/api/class-room-price-mapping-processor-schedule/src/entitys"
-)
+import "unisun/api/promotion-price-mapping-processor-schedule/src/entitys"
 
 type ClassRoomPricePort interface {
 	GetById(id int) *entitys.ClassRoomPrice

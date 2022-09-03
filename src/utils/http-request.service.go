@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"net/http"
 	"time"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/constants"
+	"unisun/api/promotion-price-mapping-processor-schedule/src/constants"
 )
 
 type HTTPRequestAdapter struct {

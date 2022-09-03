@@ -1,6 +1,6 @@
 package components
 
-import "unisun/api/class-room-price-mapping-processor-schedule/src/models"
+import "unisun/api/promotion-price-mapping-processor-schedule/src/models"
 
 type MappingValueRequestPayloadAdapte struct {
 	Payload models.ServiceIncomeRequest

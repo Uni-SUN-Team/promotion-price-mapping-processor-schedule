@@ -3,9 +3,9 @@ package client
 import (
 	"encoding/json"
 	"io/ioutil"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/constants"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/models"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/ports/util"
+	"unisun/api/promotion-price-mapping-processor-schedule/src/constants"
+	"unisun/api/promotion-price-mapping-processor-schedule/src/models"
+	"unisun/api/promotion-price-mapping-processor-schedule/src/ports/util"
 
 	"github.com/spf13/viper"
 )

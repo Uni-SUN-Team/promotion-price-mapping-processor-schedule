@@ -1,7 +1,7 @@
 app:
   env: "development"
   port: 8083
-  context_path: "/class-room-price-mapping-processor-schedule"
+  context_path: "/promotion-price-mapping-processor-schedule"
   host: "localhost"
   root_path: "/api"
   version: 1.0

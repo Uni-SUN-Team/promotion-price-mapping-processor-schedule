@@ -3,12 +3,12 @@ package crons
 import (
 	"strings"
 	"time"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/components"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/components/client"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/constants"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/repositories"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/services"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/utils"
+	"unisun/api/promotion-price-mapping-processor-schedule/src/components"
+	"unisun/api/promotion-price-mapping-processor-schedule/src/components/client"
+	"unisun/api/promotion-price-mapping-processor-schedule/src/constants"
+	"unisun/api/promotion-price-mapping-processor-schedule/src/repositories"
+	"unisun/api/promotion-price-mapping-processor-schedule/src/services"
+	"unisun/api/promotion-price-mapping-processor-schedule/src/utils"
 
 	"github.com/go-co-op/gocron"
 	"github.com/spf13/viper"

@@ -2,8 +2,8 @@ package repositories
 
 import (
 	"strings"
-	config "unisun/api/class-room-price-mapping-processor-schedule/src/configs"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/entitys"
+	config "unisun/api/promotion-price-mapping-processor-schedule/src/configs"
+	"unisun/api/promotion-price-mapping-processor-schedule/src/entitys"
 
 	"gorm.io/gorm"
 )

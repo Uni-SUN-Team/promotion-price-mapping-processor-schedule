@@ -1,6 +1,6 @@
 package component
 
-import "unisun/api/class-room-price-mapping-processor-schedule/src/models"
+import "unisun/api/promotion-price-mapping-processor-schedule/src/models"
 
 type ClassRoomHttpRequestPort interface {
 	GetInformationFormStrapi(payloadRequest models.ServiceIncomeRequest) (string, error)

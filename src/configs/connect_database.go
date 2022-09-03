@@ -3,8 +3,8 @@ package config
 import (
 	"log"
 	"strings"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/constants"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/entitys"
+	"unisun/api/promotion-price-mapping-processor-schedule/src/constants"
+	"unisun/api/promotion-price-mapping-processor-schedule/src/entitys"
 
 	"github.com/spf13/viper"
 	"gorm.io/driver/postgres"
