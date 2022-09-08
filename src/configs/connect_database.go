@@ -20,7 +20,6 @@ func ConnectDatabase() {
 		"password=" + viper.GetString(constants.DB_PASS),
 		"dbname=" + viper.GetString(constants.DB_NAME),
 		"port=" + viper.GetString(constants.DB_PORT),
-		"sslmode=" + viper.GetString(constants.DB_SSL),
 		"TimeZone=" + viper.GetString(constants.DB_TIMEZONE),
 	}
 	dsn := strings.Join(str, " ")

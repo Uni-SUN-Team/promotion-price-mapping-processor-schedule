@@ -1,7 +1,6 @@
 package config
 
 import (
-	"fmt"
 	"strings"
 
 	"github.com/spf13/viper"
@@ -20,7 +19,6 @@ func New(name string, path string) *Service {
 }
 
 func (srv *Service) ConfigENV() error {
-	fmt.Println("srv.Path " + srv.Path)
 	viper.SetConfigName(srv.Name)
 	viper.AddConfigPath(srv.Path)
 	viper.AutomaticEnv()

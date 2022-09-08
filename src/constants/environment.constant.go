@@ -4,7 +4,7 @@ const (
 	ENV_PORT    = "app.port"
 	ENV_FILE    = "application"
 	ENV_TYPE    = "yaml"
-	ENV_PATH    = "resourses/"
+	ENV_PATH    = "resources/"
 	DB_HOST     = "database.host"
 	DB_USER     = "database.user"
 	DB_PASS     = "database.pass"
